@@ -11,7 +11,6 @@ public class LoginPage  {
     private static String txtPass="//input[@id='input-password']";
     private static String btnLogin="//input[@value='Login']";
     private static String linkForgottenPassword="//div[@class='form-group']//a[normalize-space()='Forgotten Password']";
-
     private static String alertLoginError="//div[@class='alert alert-danger alert-dismissible']";
     public static void enterUsername(String username)
     {

@@ -36,9 +36,9 @@ public class LoginStepDefs  {
     public void userEntersInvalidPasswordInThePasswordField(String password) {
         LoginPage.enterPassword(password);
     }
-    @Then("error message is displayed")
-    public void errorMessageIsDisplayed() {
-        LoginPage.validateInvalidLogin("Warning: No match for E-Mail Address and/or Password.");
+    @Then("^error (.*) is displayed$")
+    public void errorMessageIsDisplayed(String Error_message) {
+        LoginPage.validateInvalidLogin(Error_message);
 
     }
 }
