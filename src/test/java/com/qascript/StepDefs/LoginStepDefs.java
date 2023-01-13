@@ -8,7 +8,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-
 public class LoginStepDefs  {
 
     @Given("user enters valid username in the username field")
@@ -26,7 +25,6 @@ public class LoginStepDefs  {
     @Then("user is logged in Successfully")
     public void userIsLoggedInSuccessfully() {
         HomePage.validateText("My Account");
-
     }
     @Given("^user enters invalid (.*) in the username field$")
     public void userEntersInvalidUsernameInTheUsernameField(String username) {
@@ -41,4 +39,13 @@ public class LoginStepDefs  {
         LoginPage.validateInvalidLogin(Error_message);
 
     }
+    @Given("User is logged into the application")
+    public void userIsLoggedIntoTheApplication() {
+        userEntersValidUsernameInTheUsernameField();
+        userEntersValidPasswordInThePasswordField();
+        userClicksOnTheLoginButton();
+        userIsLoggedInSuccessfully();
+    }
+
+
 }

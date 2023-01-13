@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,6 +17,20 @@ import java.time.Duration;
 
 public class BrowserUtils extends BaseClass {
 
+    public static void hoverAndClickOnElement(String xpath,String xpath1)
+    {
+        WebElement e1=findAndWaitForElement(xpath);
+        WebElement e2=findAndWaitForElement(xpath1);
+        Actions actions=new Actions(driver);
+        actions.moveToElement(e1);
+        actions.moveToElement(e2);
+        actions.click().build().perform();
+     //   actions.moveToElement(e1).click(e2).build().perform();
+//        actions.moveToElement(e1).build().perform();
+//        actions.moveToElement(e2).build().perform();
+//        e1.click();
+//        e2.click();
+    }
    public static WebElement findAndWaitForElement(String xpath)
    {
        WebElement element=null;

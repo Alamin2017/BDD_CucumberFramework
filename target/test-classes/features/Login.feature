@@ -1,7 +1,7 @@
 Feature: User Login
 
   Scenario: User is able to login with valid credentials
-
+    //Alt+Enter for creating StepDefs file
     Given user enters valid username in the username field
     And user enters valid password in the password field
     When user clicks on the login button
